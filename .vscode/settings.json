@@ -1,0 +1,79 @@
+{
+  "cSpell.language": "en,pt,pt_BR",
+  "cSpell.words": [
+    "commitlint",
+    "devcontainer",
+    "pygmentize"
+  ],
+  "cSpell.enableFiletypes": [
+    "tfvars",
+    "texdoc",
+    "markdown"
+  ],
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/objects",
+    ".vscode",
+    ".vscode-insiders",
+    ".devcontainer"
+  ],
+  // Editor
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.tex": "latex"
+  },
+  "files.eol": "\n",
+  "[bibtex]": {
+    "editor.formatOnSave": false,
+  },
+  "[latex]": {
+    "editor.formatOnSave": false,
+  },
+  // Latex settings
+  "latex-workshop.chktex.enabled": true,
+  "latex-workshop.latex.clean.subfolder.enabled": true,
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  "latex-workshop.latex.watch.usePolling": true,
+  "latex-workshop.latex.recipe.default": "pdflatex, makeglossaries, pdflatex (2x)",
+  "latex-workshop.latexindent.args": [
+    "-c",
+    "%DIR%/",
+    "%TMPFILE%",
+    "-y=\"defaultIndent: '%INDENT%',onlyOneBackUp: 1\""
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "pdflatex, makeglossaries, pdflatex (2x)",
+      "tools": [
+        "pdflatex",
+        "makeglossaries",
+        "pdflatex",
+        "pdflatex"
+      ]
+    },
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "--shell-escape",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "makeglossaries",
+      "command": "makeglossaries",
+      "args": [
+        "%DOCFILE%"
+      ]
+    }
+  ],
+}

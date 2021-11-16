@@ -1,0 +1,44 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.177.0/containers/javascript-node
+{
+  "name": "LaTeX",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "PKGS": "build-essential libfontconfig1 software-properties-common tzdata texlive-full python3-pygments gnuplot",
+      "GLOBAL_MODULES": "npm@latest yarn@latest",
+    },
+  },
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    // Terminal settings
+    "terminal.integrated.defaultProfile.linux": "bash",
+  },
+  "extensions": [
+    // Text
+    "stkb.rewrap",
+    "shardulm94.trailing-spaces",
+    "streetsidesoftware.code-spell-checker",
+    "streetsidesoftware.code-spell-checker-portuguese",
+    "streetsidesoftware.code-spell-checker-portuguese-brazilian",
+    // Formatting
+    "esbenp.prettier-vscode",
+    // Work Management
+    "gruntfuggly.todo-tree",
+    // Git
+    "eamodio.gitlens",
+    "donjayamanne.githistory",
+    // Latex
+    "james-yu.latex-workshop",
+  ],
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "mounts": [
+    "source=latex-history,target=/history,type=volume",
+    "source=latex-modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
+    "target=/tmp,type=tmpfs",
+  ],
+  "containerEnv": {},
+  "postCreateCommand": "sudo chown -R node ${containerWorkspaceFolder} && mkdir -p node_modules && yarn",
+  "remoteUser": "node"
+}

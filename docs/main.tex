@@ -1,0 +1,75 @@
+% !TeX root = ./main.tex
+
+%Configure document
+\documentclass{article}
+\title{My title}
+\author{Your Name}
+
+%Set encoding
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%Change language
+\usepackage[english]{babel}
+
+%Import general packages
+\usepackage{lmodern}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{xparse}
+\usepackage{blindtext}
+\usepackage{bookmark}
+
+%Import and config packages in here
+%---Graphics
+\usepackage{graphics}
+\usepackage{graphicx}
+\graphicspath{{../assets/}} %declare assets folders
+
+%---Minted
+\usepackage{minted}
+\usemintedstyle{paraiso-light} %for a list of options available, in the terminal, run pygmentize -L styles
+
+%---Watermark
+\usepackage[angle=0]{draftwatermark}
+\SetWatermarkText{\includegraphics[width=\textwidth]{../assets/watermark.png}} %add watermark if needed
+\SetWatermarkScale{0.75}
+
+%---Glossaries
+\usepackage[acronym]{glossaries}
+\makeglossaries{}
+\newacronym{coc}{CoC}{Convention over Configuration}
+
+%Begin document
+%--------------------------------------
+\begin{document}
+
+\maketitle
+\printacronyms{}
+
+\section{Convention over Configuration}
+
+\acrfull{coc} (also known as coding by convention) is a software design paradigm used by software frameworks that attempts to decrease the number of decisions that a developer using the framework is required to make without necessarily losing flexibility.
+
+\section{Code Examples}
+
+The following is a code example of a recursive Fibonacci method using the \textbf{minted} package.
+
+\begin{minted}{ruby}
+def fibonacci(n)
+  n <= 1 ? n :  fibonacci(n - 1) + fibonacci(n - 2)
+end
+puts fibonacci 10
+# => 55
+\end{minted}
+
+The following is an example of how to import code from a file:
+
+\inputminted[tabsize=2]{ruby}{../assets/code/example.rb}
+
+% generates whole document with dummy lorem ipsum text
+\blindmathpaper{}
+
+%End document
+\end{document}
