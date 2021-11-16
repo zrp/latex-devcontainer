@@ -1,3 +1,29 @@
+<h1 align="center">
+  <br>
+  <a href="https://zrp.com.br"><img src="./logo.png" alt="ZRP" width="300"></a>
+</h1>
+
+<p align="center">
+  <a href="https://saythanks.io/to/pedrogryzinsky">
+    <img alt="Say Thanks!" src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg">
+  </a>
+
+  <a href="https://app.revelo.com.br/companies/zrp-aplicacoes-informaticas-ltda-me?locale=pt-BR">
+    <img alt="Join the team" src="https://img.shields.io/badge/join%20the%20team-jobs-blue">
+  </a>
+
+  <a href="http://commitizen.github.io/cz-cli/">
+    <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
+  </a>
+</h2>
+
+<p align="center">
+  <a href="#working-in-this-repository">Working</a> ·
+  <a href="#build-the-document">Build</a> ·
+  <a href="#spell-checking">Spell Checking</a> ·
+  <a href="#watermark">Watermark</a>
+</p>
+
 # LaTeX Remote Containers
 
 This repository implements an open-source, config over configuration (CoC), [LaTeX](https://www.latex-project.org/) writing environment suitable
